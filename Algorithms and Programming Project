@@ -1,0 +1,84 @@
+# Import library yang diperlukan
+import os
+
+# Deklarasi variabel
+nama = "Reza Asti Putri"
+alamat = "Jl. Simpang Kalumpang No. 35"
+kode_pos = "25173"
+provinsi = "Padang"
+nomor_telepon = "081234567890"
+
+
+
+
+
+# Deklarasi program yang tersedia
+program_pembelajaran = {
+    "Algoritma dan Pemrograman": 500000,
+    "Database System": 1000000,
+    "Computer Network": 1500000,
+    "OOP": 2000000,
+    "Android": 2500000,
+}
+
+
+
+
+
+# Menampilkan daftar program pembelajaran
+print("List program pembelajaran yang tersedia [1 untuk ambil / 0 untuk tidak]:")
+for program, harga in program_pembelajaran.items():
+    print(f"- {program} (Rp. {harga}):", end=" ")
+    pilihan = input()
+    if pilihan == "1":
+        # Menambahkan program ke daftar pilihan
+        pilihan_program.append(program)
+
+
+
+
+
+# Menghitung total biaya kursus
+total_biaya = 0
+for program in pilihan_program:
+    total_biaya += program_pembelajaran[program]
+
+
+
+
+
+# Menampilkan halaman output
+print("=" * 50)
+print("Halaman Output")
+print("=" * 50)
+print(f"Nama lengkap: {nama}")
+print(f"Alamat: {alamat}")
+print(f"Kode Pos: {kode_pos}")
+print(f"Provinsi: {provinsi}")
+print(f"No. Telp: {nomor_telepon}")
+print()
+print(f"Total Biaya Kursus: Rp. {total_biaya},-")
+print()
+print("=" * 50)
+print("Terima kasih telah bergabung dengan Course-Net !!")
+print("=" * 50)
+
+
+
+
+
+# Menulis data ke file
+with open("data_peserta.txt", "w") as file:
+    file.write(f"Nama: {nama}\n")
+    file.write(f"Alamat: {alamat}\n")
+    file.write(f"Kode Pos: {kode_pos}\n")
+    file.write(f"Provinsi: {provinsi}\n")
+    file.write(f"No. Telp: {nomor_telepon}\n")
+    file.write(f"Total Biaya Kursus: Rp. {total_biaya}\n")
+
+
+
+
+
+# Membuka file data peserta
+os.startfile("data_peserta.txt")
